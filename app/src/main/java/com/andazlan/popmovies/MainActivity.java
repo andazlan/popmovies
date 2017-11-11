@@ -19,6 +19,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Todo : 1. Deklarasi fragment yang sudah kita buat
+        FragmentList fragmentList = FragmentList.createInstance("IAK Batch 3", 5);
+        //Bundle bundle = new Bundle();
+
+        //fragmentList.setArguments(bundle);
+
+
+        // TODO : 2. Isi container_list yang ada dilayout dengan fragment yang kita deklarasi menggunakan fragment manager
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.container_list, fragmentList).commit();
+
+
+
+        /*
         //TODO : Buat retrofitnya
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
@@ -40,5 +54,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "Ambil data gagal : " + t.getMessage());
             }
         });
+        */
     }
 }
