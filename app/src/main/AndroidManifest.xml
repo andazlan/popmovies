@@ -3,7 +3,7 @@
     package="com.andazlan.popmovies">
 
     <!-- TODO : jika ingin mengambil data dari internet, harus minta izin dari android -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,13 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MovieEntryActivity">
+        </activity>
+        <activity android:name=".ListEntryMovieActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="com.andazlan.popmovies.data.MovieEntryProvider"
+            android:authorities="com.andazlan.popmovies"
+            android:exported="false"/>
     </application>
 
 </manifest>
